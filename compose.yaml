@@ -1,0 +1,12 @@
+services:
+  samba:
+    image: dockurr/samba
+    container_name: samba
+    environment:
+      USER: "test"
+      PASS: "password"
+    volumes:
+      - ./storage:/storage
+    restart: on-failure
+    ports:
+      - "445:445"
